@@ -26,17 +26,21 @@ Algorytm działa z uwzględnieniem 2 rzeczy:
 Program idzie po kolei przez polecenia w pliku input.json i działa według algorytmu.
 
 Algorytm:
+
    Polecenie "addVehicle":
-      1) dodaje do kolejki south/north/east/west element typu Vehicle, zawierające potrzebne informacje o samochodzie(id,skąd wyrusza,gdzie wyrusza)
+      - dodaje do kolejki south/north/east/west element typu Vehicle, zawierające potrzebne informacje o samochodzie(id,skąd wyrusza,gdzie wyrusza)
+      
    Polecenie "step":
+   
    Polecenie step wymusza nam wybór drogi która będzie miała zielone światło, algorytm wyboru drogi krok po kroku:
-      1) Najpierw sprawdzamy ilość samochodów po każdej stronie zapisując w zmiennych "overall_north, overall_south...."
-      2) Potem patrzymy na zmienne zawierająca ilość samochodów które opuściły daną drogę POD RZĄD (czyli jeżeli wybieramy jakąś drogę, dla pozostałych ta zmienna się zeruje), są to zmienne "out_north, ..."
-      3) Znajdujemy 4 ilorazy (out_dir + 1) / (overall_dir + out_dir + 1)
-      4) Wybieramy tą stronę świata która ma ten iloraz najniższy
-      5) Dodatkowym warunkiem jest jeżeli jakaś strona świata nie była wybrana ponad 10 razy, to jest wybierana ona, żeby za duże korki w dwuch stronach nie spowodowały stanie w trzeciej stronie w nieskończoność
-      6) Jak wybraliśmy stronę z której chcemy dać zielone światło, również damy zielone światło tej stronie w której ruch był by bezkolizyjny z naszą wybraną stroną
-      7) bezkolizyjne ruchy są podane poniżej na rysunku
+   
+      - Najpierw sprawdzamy ilość samochodów po każdej stronie zapisując w zmiennych "overall_north, overall_south...."
+      - Potem patrzymy na zmienne zawierająca ilość samochodów które opuściły daną drogę POD RZĄD (czyli jeżeli wybieramy jakąś drogę, dla pozostałych ta zmienna się zeruje), są to zmienne "out_north, ..."
+      - Znajdujemy 4 ilorazy (out_dir + 1) / (overall_dir + out_dir + 1)
+      - Wybieramy tą stronę świata która ma ten iloraz najniższy
+      - Dodatkowym warunkiem jest jeżeli jakaś strona świata nie była wybrana ponad 10 razy, to jest wybierana ona, żeby za duże korki w dwuch stronach nie spowodowały stanie w trzeciej stronie w nieskończoność
+      - Jak wybraliśmy stronę z której chcemy dać zielone światło, również damy zielone światło tej stronie w której ruch był by bezkolizyjny z naszą wybraną stroną
+      - bezkolizyjne ruchy są podane poniżej na rysunku
 
 ![Skrzyżowanie](img/still.png)
 ![Wszystkie strony mogą skręcić w prawo](img/rightAll.png)
