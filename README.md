@@ -39,7 +39,6 @@ Polecenie "step" wymusza nam wybór drogi która będzie miała zielone światł
 - Jak wybraliśmy stronę z której chcemy dać zielone światło, również damy zielone światło tej stronie w której ruch był by bezkolizyjny z naszą wybraną stroną
 - bezkolizyjne ruchy są podane poniżej na rysunku
 
-![Skrzyżowanie](img/still.png)
 ![Wszystkie strony mogą skręcić w prawo](img/rightAll.png)
 ![Jedna strona skręca w prawo podczas gdy przeciwna jedzie do przodu](img/rightStraight.png)
 ![Jedna strona skręca w lewo, gdy ta lewa skręca na prawo](img/left.png)
