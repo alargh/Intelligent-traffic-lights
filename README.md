@@ -3,10 +3,14 @@
 ## Jak Uruchomić Projekt na Ubuntu
 1. **Kompilacja**: Upewnij się, że masz zainstalowany kompilator C (np. gcc), bibliotekę glib oraz pozostałe wymagane narzędzia.
    sudo apt update
+   
    sudo apt install build-essential
+   
    sudo apt install pkg-config
+   
    sudo apt install libglib2.0-dev
-2. **Uruchomienie programu**: Aby uruchomić program, należy wybrać nazwę pliku wejściowego w zmiennej INPUT i wykonać następujące polecenia:
+   
+3. **Uruchomienie programu**: Aby uruchomić program, należy wybrać nazwę pliku wejściowego w zmiennej INPUT i wykonać następujące polecenia:
    make
    ./program INPUT=input.json OUTPUT=output.json
    
