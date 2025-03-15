@@ -45,7 +45,9 @@ Polecenie "step" wymusza nam wybór drogi która będzie miała zielone światł
 
 ## Testy
 0) input.json
+   
 Test wzięty z polecenia
+
 1) input1.json
 
 Testowanie jak sobie radzi w przypadku dużej ilości samochodów w liniach east-west i north-south.
@@ -64,3 +66,7 @@ Testowanie bezkolizyjnego przejechanie samochodów w różnych przypadkach tzn.
 - lewo + prawo
 
 ## Potencjalne przeniesienie układu na platformę embedded
+Żeby przenieść układ na rzeczywiste urządzenie, użył bym układ stm32 + raspberryPI
+- użył bym RaspberryPI z kamerą do realizacji algorytmu YOLO, który wykrywał by samochody i je zliczał po różnych stronach drogi
+- Stm32 podłączył bym z RaspberryPI za pomocą interface'u UART i przekazywał bym do mikrokontrollera polecenia po kolei symulując pythonowy skrypt
+- Na Stm32 można wykonać podstawową logikę naszego algorytmu zaimplementowanego w C, używając biblioteki HAL i programu Stm32CubeIDE
