@@ -299,6 +299,8 @@ int main(int argc, char *argv[]) {
                 direction = "east";
             }
 
+            printf("%s",direction);
+
             // Move a car from the chosen direction
             // North implementation
             if (strcmp(direction, "north") == 0 && g_queue_get_length(north) > 0) {
@@ -310,7 +312,7 @@ int main(int argc, char *argv[]) {
                 if(strcmp(v->endRoad, "south") == 0 && g_queue_get_length(south) > 0)
                 {
                     Vehicle* v1 = (Vehicle*)g_queue_peek_head(south);
-                    if(strcmp(v1->endRoad, "north") == 0)
+                    if(strcmp(v1->endRoad, "north") == 0 || strcmp(v1->endRoad, "east") == 0)
                     {
                         g_queue_pop_head(south);
                         g_queue_push_tail(cars, v1->vehicleId);
@@ -362,6 +364,14 @@ int main(int argc, char *argv[]) {
                     }
                     if(turn_left == 0 && forward == 0)
                     {
+                        if(g_queue_get_length(west) > 0){
+                            Vehicle* v2 = (Vehicle*)g_queue_peek_head(west);
+                            if(strcmp(v2->endRoad, "south") == 0)
+                            {
+                                g_queue_pop_head(west);
+                                g_queue_push_tail(cars, v2->vehicleId);
+                            }
+                        }
                         if(g_queue_get_length(south) > 0){
                             Vehicle* v2 = (Vehicle*)g_queue_peek_head(south);
                             if(strcmp(v2->endRoad, "east") == 0)
@@ -400,7 +410,7 @@ int main(int argc, char *argv[]) {
                 if(strcmp(v->endRoad, "west") == 0 && g_queue_get_length(west) > 0)
                 {
                     Vehicle* v1 = (Vehicle*)g_queue_peek_head(west);
-                    if(strcmp(v1->endRoad, "east") == 0)
+                    if(strcmp(v1->endRoad, "east") == 0 || strcmp(v1->endRoad, "south") == 0)
                     {
                         g_queue_pop_head(west);
                         g_queue_push_tail(cars, v1->vehicleId);
@@ -452,6 +462,14 @@ int main(int argc, char *argv[]) {
                     }
                     if(turn_left == 0 && forward == 0)
                     {
+                        if(g_queue_get_length(north) > 0){
+                            Vehicle* v2 = (Vehicle*)g_queue_peek_head(north);
+                            if(strcmp(v2->endRoad, "west") == 0)
+                            {
+                                g_queue_pop_head(north);
+                                g_queue_push_tail(cars, v2->vehicleId);
+                            }
+                        }
                         if(g_queue_get_length(west) > 0){
                             Vehicle* v2 = (Vehicle*)g_queue_peek_head(west);
                             if(strcmp(v2->endRoad, "south") == 0)
@@ -488,7 +506,7 @@ int main(int argc, char *argv[]) {
                 if(strcmp(v->endRoad, "north") == 0 && g_queue_get_length(north) > 0)
                 {
                     Vehicle* v1 = (Vehicle*)g_queue_peek_head(north);
-                    if(strcmp(v1->endRoad, "south") == 0)
+                    if(strcmp(v1->endRoad, "south") == 0 || strcmp(v1->endRoad, "west") == 0)
                     {
                         g_queue_pop_head(north);
                         g_queue_push_tail(cars, v1->vehicleId);
@@ -540,6 +558,14 @@ int main(int argc, char *argv[]) {
                     }
                     if(turn_left == 0 && forward == 0)
                     {
+                        if(g_queue_get_length(east) > 0){
+                            Vehicle* v2 = (Vehicle*)g_queue_peek_head(east);
+                            if(strcmp(v2->endRoad, "north") == 0)
+                            {
+                                g_queue_pop_head(east);
+                                g_queue_push_tail(cars, v2->vehicleId);
+                            }
+                        }
                         if(g_queue_get_length(north) > 0){
                             Vehicle* v2 = (Vehicle*)g_queue_peek_head(north);
                             if(strcmp(v2->endRoad, "west") == 0)
@@ -576,7 +602,7 @@ int main(int argc, char *argv[]) {
                 if(strcmp(v->endRoad, "east") == 0 && g_queue_get_length(east) > 0)
                 {
                     Vehicle* v1 = (Vehicle*)g_queue_peek_head(east);
-                    if(strcmp(v1->endRoad, "west") == 0)
+                    if(strcmp(v1->endRoad, "west") == 0 || strcmp(v1->endRoad, "north") == 0)
                     {
                         g_queue_pop_head(east);
                         g_queue_push_tail(cars, v1->vehicleId);
@@ -628,6 +654,14 @@ int main(int argc, char *argv[]) {
                     }
                     if(turn_left == 0 && forward == 0)
                     {
+                        if(g_queue_get_length(south) > 0){
+                            Vehicle* v2 = (Vehicle*)g_queue_peek_head(south);
+                            if(strcmp(v2->endRoad, "east") == 0)
+                            {
+                                g_queue_pop_head(south);
+                                g_queue_push_tail(cars, v2->vehicleId);
+                            }
+                        }
                         if(g_queue_get_length(east) > 0){
                             Vehicle* v2 = (Vehicle*)g_queue_peek_head(east);
                             if(strcmp(v2->endRoad, "north") == 0)
@@ -708,7 +742,7 @@ int main(int argc, char *argv[]) {
     }
     
     printf("Successfully processed %s to %s\n", input_path, output_path);
-    printf("Modified %d commands by adding dots at the end of each field\n", command_count);
+    printf("Got %d commands\n", command_count);
     
     return 0;
 }
