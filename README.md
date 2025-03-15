@@ -16,6 +16,8 @@
    make
    
    ./program INPUT=input.json OUTPUT=output.json
+
+   Wyniki programu będą znajdowały się w pliku output.json po wykonaniu powyższych poleceń
    
 ## Opis algorytmu
 
