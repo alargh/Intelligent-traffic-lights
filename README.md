@@ -46,13 +46,18 @@ Polecenie "step" wymusza nam wybór drogi która będzie miała zielone światł
 ## Testy
 0) input.json
 Test wzięty z polecenia
-2) input1.json
+1) input1.json
+
 Testowanie jak sobie radzi w przypadku dużej ilości samochodów w liniach east-west i north-south.
 Algorytm tak jak i powinien przepuszcza po kolei jeden z west-east, a potem dwa south-north i north-south naraz tworząc bezkolizyjny ruch.
-3) input2.json
+
+2) input2.json
+   
 Testowanie jak sobie radzi w przypadku dużej ilości samochodów (30) w linii east-west i nie tak dużej ilości (3) w south-north.
 Algorytm tak jak i powinien przepuszcza odpowiedni procent samochodów w linii gdzie jest największy korek, a potem daje przejechać samochodowi z mniejszym korkiem
-4) inpit3.json
+
+3) inpit3.json
+   
 Testowanie bezkolizyjnego przejechanie samochodów w różnych przypadkach tzn.
 - cztery na raz jadą w prawo
 - prawo + prosto
