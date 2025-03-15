@@ -30,10 +30,7 @@ Algorytm:
    Polecenie "addVehicle":
       - dodaje do kolejki south/north/east/west element typu Vehicle, zawierające potrzebne informacje o samochodzie(id,skąd wyrusza,gdzie wyrusza)
       
-   Polecenie "step":
-   
-   Polecenie step wymusza nam wybór drogi która będzie miała zielone światło, algorytm wyboru drogi krok po kroku:
-   
+   Polecenie "step" wymusza nam wybór drogi która będzie miała zielone światło, algorytm wyboru drogi krok po kroku:
       - Najpierw sprawdzamy ilość samochodów po każdej stronie zapisując w zmiennych "overall_north, overall_south...."
       - Potem patrzymy na zmienne zawierająca ilość samochodów które opuściły daną drogę POD RZĄD (czyli jeżeli wybieramy jakąś drogę, dla pozostałych ta zmienna się zeruje), są to zmienne "out_north, ..."
       - Znajdujemy 4 ilorazy (out_dir + 1) / (overall_dir + out_dir + 1)
